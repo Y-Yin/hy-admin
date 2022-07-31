@@ -1,3 +1,4 @@
+<!-- svg icon 图标 -->
 <template>
     <!-- 展示外部图标 -->
     <div v-if="isExternal" 

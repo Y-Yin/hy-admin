@@ -25,13 +25,16 @@ function XHR2ExpressReqWrap(respond) {
         let result = null
         if (respond instanceof Function) {
             const { body, type, url } = options
-            // https://expressjs.com/en/4x/api.html#req
-            console.log(JSON.parse(body),param2Obj(url))
+            // https://expressjs.com/en/4x/api.html#req         
             result = respond({
                 method: type,
                 body: JSON.parse(body),
                 query: param2Obj(url)
             })
+            console.log('-----------------')
+            console.log('响应数据',result)
+            console.log('-----------------')
+
         } else {
             result = respond
         }
